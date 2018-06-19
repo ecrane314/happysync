@@ -6,11 +6,10 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # Turn off brew analytics
 export HOMEBREW_NO_ANALYTICS=1
 
-alias lsl="ls -la"
-export D="/Users/evancrane/Develop/"
+alias ll="ls -la"
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/evancrane/Develop/google-cloud-sdk/path.bash.inc' ]; then source '/Users/evancrane/Develop/google-cloud-sdk/path.bash.inc'; fi
+if [ -f '/usr/local/google-cloud-sdk/path.bash.inc' ]; then source '/usr/local/google-cloud-sdk/path.bash.inc'; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/evancrane/Develop/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/evancrane/Develop/google-cloud-sdk/completion.bash.inc'; fi
+if [ -f '/usr/local/google-cloud-sdk/completion.bash.inc' ]; then source '/usr/local/google-cloud-sdk/completion.bash.inc'; fi
