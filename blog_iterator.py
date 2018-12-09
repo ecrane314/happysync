@@ -1,3 +1,4 @@
+import google.cloud
 from google.cloud import storage
 
 client = storage.Client()
@@ -9,9 +10,9 @@ def iter_blobs():
     except google.cloud.exceptions.NotFound:
         print('Sorry, that bucket does not exist!')
 
-    blobl = bucket.list_blobs()
-    print(blobl.next())
-    print(blobl.next())
+    blob_list = bucket.list_blobs()
+    print(blob_list)
+    print(blob_list)
 
 if __name__=="__main__":
     iter_blobs()
