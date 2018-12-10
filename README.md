@@ -1,4 +1,4 @@
-happyrsync is a CLI utility to perform authenticated syncronization between local  directories and Google Cloud Stoaage Buckets.
+happysync is a CLI utility to perform authenticated syncronization between local  directories and Google Cloud Stoaage Buckets.
 
 It was written to sync large project files between multiple computers and additionally offer cloud backup.
 

@@ -1,8 +1,9 @@
 import google.cloud
 from google.cloud import storage
+from sys import argv
 
 client = storage.Client()
-BUCKET_NAME = 'ce-demo2'
+BUCKET_NAME = argv[1]
 
 def iter_blobs():
     try:
