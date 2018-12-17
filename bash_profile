@@ -1,32 +1,48 @@
+# 1 Shell considerations incl formatting, alias, autocomplete
+# 2 Languages
+# 3 SDKs
 
-export CLICOLOR=1
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
-export LSCOLORS=ExFxBxDxCxegedabagacad
-
-# Turn off brew analytics
+# Turn off brew analytics, autocompletion
 export HOMEBREW_NO_ANALYTICS=1
 
-alias ll="ls -la"
+#brew command for general terminal autocomplete including docker
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/usr/local/google-cloud-sdk/path.bash.inc' ]; then source '/usr/local/google-cloud-sdk/path.bash.inc'; fi
 
-# The next line enables shell command completion for gcloud.
-if [ -f '/usr/local/google-cloud-sdk/completion.bash.inc' ]; then source '/usr/local/google-cloud-sdk/completion.bash.inc'; fi
-/Users/evancrane/.bash_profile
+# Don't put duplicate lines in your bash history limit (100KB or 5K entries)
+export HISTCONTROL=ignoredups
+export HISTFILESIZE=100000
+export HISTSIZE=5000
 
+# Color
 export CLICOLOR=1
+#export TERM=xterm-color
+
 export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+#export PS1="\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] "
+#
+export GREP_OPTIONS='--color=auto'
 export LSCOLORS=ExFxBxDxCxegedabagacad
+#export LSCOLORS=gxfxcxdxbxegedabagacad # Dark, old
+#export LSCOLORS=Exfxcxdxbxegedabagacad
 
-# Turn off brew analytics
-export HOMEBREW_NO_ANALYTICS=1
 
+
+# Alias
 alias ll="ls -la"
 alias python="python3"
-alias py37="source ~/develop/env3/bin/activate"
+alias py37="source ~/develop/env37/bin/activate"
 alias py36="source ~/develop/env36/bin/activate"
 
+# Setting PATH for Python 3.7
+PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
+PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
+PATH=$PATH:/Users/evancrane/Library/Python/2.7/bin
+export PATH
+
+
+#GOPATH set for golang in my dev folder
+if [ -d /usr/local/bin/go/ ]; then export GOPATH='/usr/local/bin/go' ; fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/evancrane/google-cloud-sdk/path.bash.inc' ]; then source '/Users/evancrane/google-cloud-sdk/path.bash.inc'; fi
@@ -34,19 +50,4 @@ if [ -f '/Users/evancrane/google-cloud-sdk/path.bash.inc' ]; then source '/Users
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/evancrane/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/evancrane/google-cloud-sdk/completion.bash.inc'; fi
 
-# Deprecating python2, should try to remove
-#PATH=$PATH:'/Users/evancrane/Library/Python/2.7/bin'
 
-# Setting PATH for Python 3.7
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
-export PATH
-
-
-Add the following line to your ~/.bash_profile:
- [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-
-# Setting PATH for Python 3.6
-# The original version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH
