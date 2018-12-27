@@ -18,9 +18,9 @@ export HISTSIZE=5000
 export CLICOLOR=1
 #export TERM=xterm-color
 
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[33;1m\]\w\[\033[m\]\$ "
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\l:\[\033[33;1m\]\W\[\033[m\]\$ "
 #export PS1="\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] "
-#
+
 export GREP_OPTIONS='--color=auto'
 export LSCOLORS=ExFxBxDxCxegedabagacad
 #export LSCOLORS=gxfxcxdxbxegedabagacad # Dark, old
@@ -33,6 +33,8 @@ alias ll="ls -la"
 alias python="python3"
 alias py37="source ~/develop/env37/bin/activate"
 alias py36="source ~/develop/env36/bin/activate"
+alias py27="source ~/develop/env27/bin/activate"
+
 
 # Setting PATH for Python 3.7
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
