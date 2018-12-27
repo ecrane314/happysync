@@ -5,6 +5,11 @@
 # Need gcloud sdk and in particular, gsutil to run this
 # .boto file in HOME can set encryption/decryption key
 
+
+##### TODO  Encryption option?
+##### TODO  Confirm when selecting LIVE
+
+
 # $1 path to local directory
 SRC_PATH=$1
 
