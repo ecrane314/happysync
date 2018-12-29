@@ -47,9 +47,8 @@ export PATH
 if [ -d /usr/local/bin/go/ ]; then export GOPATH='/usr/local/bin/go' ; fi
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/evancrane/google-cloud-sdk/path.bash.inc' ]; then source '/Users/evancrane/google-cloud-sdk/path.bash.inc'; fi
+if [ -f /Users/$(whoami)/google-cloud-sdk/path.bash.inc ]; then source /Users/$(whoami)/google-cloud-sdk/path.bash.inc; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/evancrane/google-cloud-sdk/completion.bash.inc' ]; then source '/Users/evancrane/google-cloud-sdk/completion.bash.inc'; fi
-
+if [ -f /Users/$(whoami)/google-cloud-sdk/completion.bash.inc ]; then source /Users/$(whoami)/google-cloud-sdk/completion.bash.inc; fi
 
