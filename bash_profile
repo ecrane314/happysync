@@ -22,9 +22,8 @@ export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\l:\[\033[33;1m\]\W\[\033[m\]\$
 #export PS1="\[\e[1;32m\][\u@\h \W]\$\[\e[0m\] "
 
 export GREP_OPTIONS='--color=auto'
-export LSCOLORS=ExFxBxDxCxegedabagacad
+export LSCOLORS=GxFxBxDxCxegedabagacad
 #export LSCOLORS=gxfxcxdxbxegedabagacad # Dark, old
-#export LSCOLORS=Exfxcxdxbxegedabagacad
 # http://linux-sxs.org/housekeeping/lscolors.html
 
 
