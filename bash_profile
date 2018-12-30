@@ -29,7 +29,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 
 # Alias
-alias ll="ls -la"
+alias ll="ls -lah"
 alias python="python3"
 alias py37="source ~/develop/env37/bin/activate"
 alias py36="source ~/develop/env36/bin/activate"
