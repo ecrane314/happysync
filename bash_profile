@@ -25,7 +25,7 @@ export GREP_OPTIONS='--color=auto'
 export LSCOLORS=GxFxBxDxCxegedabagacad
 #export LSCOLORS=gxfxcxdxbxegedabagacad # Dark, old
 # http://linux-sxs.org/housekeeping/lscolors.html
-
+# https://geoff.greer.fm/lscolors/
 
 # Alias
 alias ll="ls -lah"
