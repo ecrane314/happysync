@@ -37,7 +37,7 @@ alias gs="git status"
 # Setting PATH for Python 3.7
 PATH="/Library/Frameworks/Python.framework/Versions/3.7/bin:${PATH}"
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-PATH=$PATH:/Users/evancrane/Library/Python/2.7/bin
+PATH=$PATH:/Users/$(whoami)/Library/Python/2.7/bin
 export PATH
 
 
