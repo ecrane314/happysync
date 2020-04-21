@@ -29,10 +29,8 @@ export LSCOLORS=GxFxBxDxCxegedabagacad
 
 # Alias
 alias ll="ls -lh"
-alias python="python3"
-alias py37="source ~/develop/env37/bin/activate"
-alias py36="source ~/develop/env36/bin/activate"
-alias py27="source ~/develop/env27/bin/activate"
+alias py3="source ~/develop/env3/bin/activate"
+alias py2="source ~/develop/env2/bin/activate"
 alias gs="git status"
 
 
