@@ -8,7 +8,10 @@ Proceed to terminal
 Install gpg 
 ```brew install gpg```
 Encrypt your file
-#TODO fix ```gpg symmetric -a aes256 encrypt zip1``` 
+#TODO fix 
+
+```gpg --symmetric --cipher-algo aes256 -o zip1.gpg plain``` 
+
 Upload to bucket and copy to your external drive.
 
 #### 2018 Dec 30
