@@ -11,6 +11,8 @@ Encrypt your file
 #TODO fix 
 
 ```gpg --symmetric --cipher-algo aes256 -o zip1.gpg plain``` 
+``` $(date -u +"%Y-%m-%dT%H%M%ST")```
+```gpg --symmetric --cipher-algo aes256 -o $(date -u +"%Y-%m-%dT%H%M%ST")-source.zip.gpg plain ```
 
 Upload to bucket and copy to your external drive.
 
