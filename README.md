@@ -19,8 +19,10 @@ Install gpg
 ```brew install gpg```
 Encrypt your file
 
-#TODO fix ```gpg symmetric -a aes256 encrypt zip1``` 
-```gpg --verbose --symmetric --output <outfile.zip.gpg> <infile.zip>```
+```gpg --symmetric --cipher-algo aes256 -o zip1.gpg plain``` 
+``` $(date -u +"%Y-%m-%dT%H%M%ST")```
+```gpg --symmetric --cipher-algo aes256 -o $(date -u +"%Y-%m-%dT%H%M%ST")-source.zip.gpg plain ```
+
 Upload to bucket and copy to your external drive.
 
 
