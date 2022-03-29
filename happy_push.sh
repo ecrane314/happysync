@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
-# use "env bash" instead of "bash" to pick from environment
+# Use "env bash" instead of "bash" to pick from environment
 
 # 2018 May 16 GCP backup script
-# Need gcloud sdk and in particular, gsutil to run this
+# Need gsutil to run this
 # .boto file in HOME can set encryption/decryption key
 
-
-##### TODO  Encryption option?
 ##### TODO  Confirm when selecting LIVE
 
+# gsutil help options, # -m multithread 
+# gsutil help <command> eg rsync
+# -C continue if error
+# -d delete files in destination not present in source
+# -e skip over sym links
+# -n [not used] perform a dry run, simulating the changes and displaying results
+# -r recurse through folders
 
 # $1 path to local directory
 SRC_PATH=$1
@@ -39,10 +44,3 @@ if [ -z "$1" -o -z "$2" -o -z "$3" ]
         printf "Job Complete! \n"
 fi
 
-# gsutil help options, # -m multithread 
-# gsutil help <command> eg rsync
-# -C continue if error
-# -d delete files in destination not present in source
-# -e skip over sym links
-# -n [not used] perform a dry run, simulating the changes and displaying results
-# -r recurse through folders
