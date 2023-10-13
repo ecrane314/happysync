@@ -21,6 +21,9 @@ source $HOME/.backup_config
 
 printf "LIVE SYNC\n"
 printf "gs://$BUCKET/$CURRENT_DIR/"
+
+# Throws  invalid_grant: Bad Request when token is expired. gcloud auth login to fix
+#gsutil -m rsync -C -e -r -n  . gs://evancrane/Audio/ 
 gsutil -m rsync -C -e -r -n . gs://${BUCKET}/${CURRENT_DIR}/
 printf "\nJob Complete! \n"
 
