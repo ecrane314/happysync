@@ -16,18 +16,21 @@ source $HOME/.backup_config
 # -C continue if error
 # -d delete files in destination not present in source
 # -e skip over sym links
+# -i  Skip copying any files that already exist at the destination, regardless of their modification time.
 # -n [not used] perform a dry run, simulating the changes and displaying results
 # -r recurse through folders
 
-printf "LIVE SYNC\n"
-printf "gs://$BUCKET/$CURRENT_DIR/"
 
-# Throws  invalid_grant: Bad Request when token is expired. gcloud auth login to fix
-#gsutil -m rsync -C -e -r -n  . gs://evancrane/Audio/ 
-gsutil -m rsync -C -e -r -n . gs://${BUCKET}/${CURRENT_DIR}/
+printf "gs://$BUCKET/$CURRENT_DIR/\n"
+
+if [[ "$1" == "-l" ]]; then
+    # LIVE
+    printf "LIVE SYNC\n"
+    # Throws invalid_grant: Bad Request when token is expired. gcloud auth login to fix
+    gsutil -m rsync -C -e -r . gs://${BUCKET}/${CURRENT_DIR}/
+else
+    # Run the default branch 
+    printf "====DRY RUN====\n"
+    gsutil -m rsync -C -e -r -n . gs://${BUCKET}/${CURRENT_DIR}/
+fi
 printf "\nJob Complete! \n"
-
-
-#printf "====DRY RUN====\n"
-#gsutil -m rsync -n -C -d -e -r $SRC_PATH gs://${DEST_BUCKET}/${DEST_PATH}/
-
