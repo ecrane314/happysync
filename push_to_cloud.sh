@@ -49,3 +49,23 @@ if [ -z "$1" -o -z "$2" -o -z "$3" ]
         printf "Job Complete! \n"
 fi
 
+
+### WIP  v2 of the above
+# source the config file before starting.
+
+if [ -z "$1" -o -z "$2" -o -z "$3" ]
+    then 
+        printf "Error: Parameters Missing. Please use these three\n"
+        printf "<Source Path> <Destination Bucket> <Destination Directory>\n"
+    else
+        if [ "$DRY_RUN" == "LIVE" ]
+            then
+                printf "====LIVE SYNC====\n"
+                gsutil -m rsync -C -d -e -r $SRC_PATH gs://${DEST_BUCKET}/${DEST_PATH}/
+            else
+                printf "====DRY RUN====\n"
+                gsutil -m rsync -n -C -d -e -r $SRC_PATH gs://${DEST_BUCKET}/${DEST_PATH}/
+        fi
+        printf "Job Complete! \n"
+fi
+
